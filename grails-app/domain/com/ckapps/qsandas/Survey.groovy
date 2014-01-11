@@ -5,5 +5,5 @@ class Survey {
     static constraints = {
     }
 	
-	static hasMany = [ potentialAnswers : PotentialAnswer]
+	static hasMany = [ questions : Question]
 }
