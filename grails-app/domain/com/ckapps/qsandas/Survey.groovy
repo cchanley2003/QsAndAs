@@ -1,7 +1,8 @@
 package com.ckapps.qsandas
 
 class Survey {
-
+	
+	String surveyName
     static constraints = {
     }
 	
