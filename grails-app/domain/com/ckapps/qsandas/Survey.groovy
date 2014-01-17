@@ -7,4 +7,9 @@ class Survey {
     }
 	
 	static hasMany = [ questions : Question]
+	
+	String toString()
+	{
+		surveyName
+	}
 }

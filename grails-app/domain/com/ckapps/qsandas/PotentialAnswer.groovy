@@ -5,4 +5,6 @@ class PotentialAnswer {
 	String answerText
     static constraints = {
     }
+	
+	static belongsTo = Question
 }
