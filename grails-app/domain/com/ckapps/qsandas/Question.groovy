@@ -5,6 +5,7 @@ class Question {
 	String questionText
     static constraints = {
     }
+
 	
-	static hasMan = [potentialAnswers : PotentialAnswer]
+	static hasMany = [potentialAnswers : PotentialAnswer]
 }
