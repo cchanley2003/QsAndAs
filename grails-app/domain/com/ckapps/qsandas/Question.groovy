@@ -6,5 +6,5 @@ class Question {
     static constraints = {
     }
 	
-	static hasMan = [potentialAnswers : PotentialAnswer]
+	static hasMany = [potentialAnswers : PotentialAnswer]
 }
