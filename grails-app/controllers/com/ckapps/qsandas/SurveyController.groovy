@@ -10,6 +10,18 @@ class SurveyController {
 	def newSurvey = {
 		def survey = new Survey(surveyName: params.surveyName)
 		survey.save()
-		return [ newSurvey: params.surveyName ]
+		return [ newSurvey: survey ]
 	}
+	
+	def retrieveQuestions() {
+		def questions = null
+		[queestions:questions]
+	}
+	
+	def submitQuestion(String questionText) {
+		Question q = new Question(questionText: questionText).save()
+		render "<script>retrieveQuestions()</script>"
+	}
+	
+	
 }
