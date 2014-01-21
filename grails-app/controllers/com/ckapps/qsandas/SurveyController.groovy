@@ -14,12 +14,15 @@ class SurveyController {
 	}
 	
 	def retrieveQuestions() {
-		def questions = null
+		def questions = params.newSurvey.questions
 		[queestions:questions]
 	}
 	
 	def submitQuestion(String questionText) {
 		Question q = new Question(questionText: questionText).save()
+		Survey s = params.newSurvey
+		s.questions.add(q);
+		s.save()
 		render "<script>retrieveQuestions()</script>"
 	}
 	
