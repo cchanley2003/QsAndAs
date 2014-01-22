@@ -22,7 +22,7 @@
         </div>
 
         <script>
-        var test="two"
+        var test = '${newSurvey.surveyName}'
         function greetName(name) {
             <g:remoteFunction controller="survey" action="greetName" update="greetingBox" params="'survey='+test+'&name='+name"/>
                   }
