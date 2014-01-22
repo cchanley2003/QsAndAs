@@ -10,20 +10,31 @@ class SurveyController {
 	def newSurvey = {
 		def survey = new Survey(surveyName: params.surveyName)
 		survey.save()
+		session.survey = newSurvey
 		return [ newSurvey: survey ]
 	}
 	
 	def retrieveQuestions() {
 		def questions = params.newSurvey.questions
-		[queestions:questions]
+		[ questions: questions ]
 	}
 	
-	def submitQuestion(String questionText) {
-		Question q = new Question(questionText: questionText).save()
+	def submitQuestion() {
+		Question q = new Question(questionText: ${params.question}).save()
 		Survey s = params.newSurvey
 		s.questions.add(q);
 		s.save()
-		render "<script>retrieveQuestions()</script>"
+		render "Success"
+	}
+	
+	def greetName() {
+		Question q = new Question()
+		q.questionText = params.name
+		q.save()
+		//Survey s = Survey.findBySurveyName(params.survey)
+		//s.questions.add(q);
+		//s.save()
+		render "${params.survey}"
 	}
 	
 	
