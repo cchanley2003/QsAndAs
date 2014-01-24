@@ -31,9 +31,8 @@ class SurveyController {
 		Question q = new Question()
 		q.questionText = params.name
 		q.save()
-		//Survey s = Survey.findBySurveyName(params.survey)
-		//s.questions.add(q);
-		//s.save()
+		Survey s = Survey.findBySurveyName(params.survey)
+		s.questions.add(q);
 		render "${params.survey}"
 	}
 	
