@@ -33,7 +33,7 @@ class SurveyController {
 		q.save()
 		Survey s = Survey.findBySurveyName(params.survey)
 		s.questions.add(q);
-		render "${params.survey}"
+		render (view: "retrieveQuestions", model: [newSurvey: s])
 	}
 	
 	
