@@ -1,4 +1,4 @@
-<g:each in="${newSurvey.questions}" var="question">
+<g:each in="${it.questions}" var="question">
     <div>
         <p>${question.questionText}</p>
     </div>

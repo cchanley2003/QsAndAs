@@ -8,23 +8,26 @@ class SurveyController {
 	}
 	
 	def newSurvey = {
-		def survey = new Survey(surveyName: params.surveyName)
-		survey.save()
-		session.survey = newSurvey
+		def survey = null
+		if(survey == null)
+        {
+			survey = new Survey(surveyName: params.surveyName).save()
+        }
 		return [ newSurvey: survey ]
 	}
 	
-	def retrieveQuestions() {
+	def _retrieveQuestions() {
 		def questions = params.newSurvey.questions
 		[ questions: questions ]
 	}
 	
 	def submitQuestion() {
-		Question q = new Question(questionText: ${params.question}).save()
-		Survey s = params.newSurvey
+		Question q = new Question()
+		q.questionText = params.name
+		q.save()
+		Survey s = Survey.findBySurveyName(params.survey)
 		s.questions.add(q);
-		s.save()
-		render "Success"
+		render (template: "retrieveQuestions", bean:s)
 	}
 	
 	def greetName() {
@@ -33,7 +36,7 @@ class SurveyController {
 		q.save()
 		Survey s = Survey.findBySurveyName(params.survey)
 		s.questions.add(q);
-		render (view: "retrieveQuestions", model: [newSurvey: s])
+		render (template: "retrieveQuestions", bean:s)
 	}
 	
 	

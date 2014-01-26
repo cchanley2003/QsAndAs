@@ -3,18 +3,13 @@
 	<head>
 		<title>Simple Ajax</title>
         <g:javascript library="jquery"/>
-        <style>
-            #greetingBox {
-                border: 1px solid #000; width: 300px; height: 100px; background-color: #c0c0c0;
-            }
-        </style>
 	</head>
 	<body>
 	    <g:javascript library="jquery"/>
 		<r:layoutResources />
 	    <h2>${newSurvey.surveyName}</h2>
         <div id="greetingBox">
-           
+           <g:render template="retrieveQuestions" bean="${newSurvey}"></g:render>
         </div>
 
         <div>
