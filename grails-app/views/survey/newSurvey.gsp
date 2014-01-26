@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Simple Ajax</title>
+		<title>Qs And As</title>
         <g:javascript library="jquery"/>
 	</head>
 	<body>

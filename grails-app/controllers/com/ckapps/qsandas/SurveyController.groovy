@@ -7,13 +7,18 @@ class SurveyController {
 	def start() {
 	}
 	
-	def newSurvey = {
-		def survey = null
+	def newSurvey()  {
+		def survey = Survey.findBySurveyName(params.surveyName)
 		if(survey == null)
         {
 			survey = new Survey(surveyName: params.surveyName).save()
         }
 		return [ newSurvey: survey ]
+	}
+	
+	def listSurveys() {	
+		List surveys = Survey.getAll()
+		return [surveyList : surveys]
 	}
 	
 	def _retrieveQuestions() {
