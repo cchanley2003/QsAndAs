@@ -1,5 +1,7 @@
-<g:each in="${it.questions}" var="question">
-    <div>
-        <p>${question.questionText}</p>
-    </div>
-</g:each>
+<ol>
+	<g:each in="${it.questions}" var="question">
+		<li>
+			${question.questionText}
+		</li>
+	</g:each>
+</ol>
