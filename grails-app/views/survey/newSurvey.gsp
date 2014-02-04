@@ -8,7 +8,7 @@
 	    <g:javascript library="jquery"/>
 		<r:layoutResources />
 	    <h2>${newSurvey.surveyName}</h2>
-        <div id="greetingBox">
+        <div id="questionDiv">
            <g:render template="retrieveQuestions" bean="${newSurvey}"></g:render>
         </div>
 
@@ -19,7 +19,7 @@
         <script>
         var test = '${newSurvey.surveyName}'
         function greetName(name) {
-            <g:remoteFunction controller="survey" action="greetName" update="greetingBox" params="'survey='+test+'&name='+name"/>
+            <g:remoteFunction controller="survey" action="submitQuestion" update="questionDiv" params="'survey='+test+'&name='+name"/>
                   }
         </script>
 

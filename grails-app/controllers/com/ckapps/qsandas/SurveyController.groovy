@@ -35,14 +35,6 @@ class SurveyController {
 		render (template: "retrieveQuestions", bean:s)
 	}
 	
-	def greetName() {
-		Question q = new Question()
-		q.questionText = params.name
-		q.save()
-		Survey s = Survey.findBySurveyName(params.survey)
-		s.questions.add(q);
-		render (template: "retrieveQuestions", bean:s)
-	}
 	
 	
 }
