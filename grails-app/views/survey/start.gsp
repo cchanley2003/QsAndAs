@@ -5,7 +5,7 @@
 </head>
 <body>
 	<legend>Start a New Survey</legend>
-	<g:form action="newSurvey">
+	<g:form action="editSurvey">
 		<label for="surveyName">Survey Name</label>
 		<g:textField name="surveyName" />
 		<g:submitButton name="create" value="Create" />

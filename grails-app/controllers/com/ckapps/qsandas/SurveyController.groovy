@@ -7,13 +7,13 @@ class SurveyController {
 	def start() {
 	}
 	
-	def newSurvey()  {
+	def editSurvey()  {
 		def survey = Survey.findBySurveyName(params.surveyName)
 		if(survey == null)
         {
 			survey = new Survey(surveyName: params.surveyName).save()
         }
-		return [ newSurvey: survey ]
+		return [ editSurvey: survey ]
 	}
 	
 	def listSurveys() {	
